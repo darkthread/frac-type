@@ -108,6 +108,7 @@ public readonly struct Frac
     public override bool Equals(object? obj) => obj is Frac other
         && this.Simplify().ToString() == other.Simplify().ToString();
     public override int GetHashCode() => Simplify().ToString().GetHashCode();
+
     public static bool operator ==(Frac a, Frac b) => a.Equals(b);
     public static bool operator !=(Frac a, Frac b) => !a.Equals(b);
 
@@ -118,5 +119,7 @@ public readonly struct Frac
         CommonDenominator(a, b).Item1.num > CommonDenominator(a, b).Item2.num;
     public static bool operator <=(Frac a, Frac b) => a < b || a == b;
     public static bool operator >=(Frac a, Frac b) => a > b || a == b;
+
+    public Frac Abs() => this > 0 ? this : -this;
 
 }

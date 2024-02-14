@@ -1,4 +1,14 @@
-﻿// 使用自訂分數型別進行數學運算
+﻿Console.WriteLine(@"解聯立方程組
+=================
+7x - 2y + 3z = 12
+2x - y + 4z = 12
+-x + 3y - z = 2");
+Console.WriteLine("\n使用 MathNet 程式庫");
+MathNetDemo.Solve();
+Console.WriteLine("\n分數矩陣");
+FracMatrixDemo.GaussianEliminationDemo();
+
+// 使用自訂分數型別進行數學運算
 Frac a = new Frac(1, 2);
 Frac b = new Frac("3/4");
 Frac c = new Frac(2);
